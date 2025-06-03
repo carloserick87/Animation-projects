@@ -10,7 +10,6 @@
             <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
             <link rel="stylesheet" href="./Assets/style.css">
-            <script src="./Assets/index.js"></script>
             <title>Recursos Animados</title>
         </head>
             <body>
@@ -22,66 +21,70 @@
 
                     <main>
                         <form action="#">
-                        
-                        <!-- Steps-->
-                        <div class="form form-step form-step-active">
-                            <h1>Registro</h1>
-                            <!--Progress bar-->
-                         <div class="progressbar">
-                            <div class="progress" id="progress">
-                                
-                            </div>
-                            <div class="progress-setp progress-step-active" data-title="Registro"></div>
-                            <div class="progress-setp" data-title="Info"></div>
-                            <div class="progress-setp" data-title="Pago"></div>
-                         </div>
-                            <div class="input-group">
-                                <label for="username">Nombre</label>
-                                <input type="text" name="" id="username" placeholder="Nombre">
+
+                            <!-- ✅ Barra de progreso se mantiene fija -->
+                            <div class="progressbar">
+                                <div class="progress" id="progress"></div>
+                                <div class="progress-setp progress-step-active" data-title="Registro" data-step="0"></div>
+                                <div class="progress-setp" data-title="Info" data-step="1"></div>
+                                <div class="progress-setp" data-title="Pago" data-step="2"></div>
                             </div>
 
-                            <div class="input-group">
-                                <label for="position">Position</label>
-                                <input type="text" name="position" id="position">
-                            </div>
-                            <div class="">
-                                <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
-                            </div>
-                        </div>
-                        <div class="form form-step">
-                            <h1>Registro1</h1>
-                            <div class="input-group">
-                                <label for="username">Telefono</label>
-                                <input type="number" name="" id="username" placeholder="Nombre">
+                            <!-- Paso 1 -->
+                            <div class="form form-step form-step-active">
+                                <h1>Registro</h1>
+                                <div class="input-group">
+                                    <label for="username1">Nombre</label>
+                                    <input type="text" name="" id="username1" placeholder="Nombre">
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="position1">Position</label>
+                                    <input type="text" name="position" id="position1">
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-next width-50 ml-auto">Next</button>
+                                </div>
                             </div>
 
-                            <div class="input-group">
-                                <label for="position">Direccion</label>
-                                <input type="text" name="position" id="position">
-                            </div>
-                            <div class="btns-group">
-                                <a href="#" class="btn btn-prev">Previous</a>
-                                <a href="#" class="btn btn-next">Next</a>
-                            </div>
-                        </div>
-                        <div class="form form-step ">
-                            <h1>Registro2</h1>
-                            <div class="input-group">
-                                <label for="username">Comprar</label>
-                                <input type="number" name="" id="username" placeholder="Nombre">
+                            <!-- Paso 2 -->
+                            <div class="form form-step">
+                                <h1>Registro1</h1>
+                                <div class="input-group">
+                                    <label for="username2">Teléfono</label>
+                                    <input type="number" name="" id="username2" placeholder="Teléfono">
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="position2">Dirección</label>
+                                    <input type="text" name="position" id="position2">
+                                </div>
+                                <div class="btns-group">
+                                    <button type="button" class="btn btn-prev">Previous</button>
+                                    <button type="button" class="btn btn-next">Next</button>
+                                </div>
                             </div>
 
-                            <div class="input-group">
-                                <label for="position">Total</label>
-                                <input type="text" name="position" id="position">
+                            <!-- Paso 3 -->
+                            <div class="form form-step">
+                                <h1>Registro2</h1>
+                                <div class="input-group">
+                                    <label for="username3">Comprar</label>
+                                    <input type="number" name="" id="username3" placeholder="Cantidad">
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="position3">Total</label>
+                                    <input type="text" name="position" id="position3">
+                                </div>
+                                <div class="btns-group">
+                                    <button type="button" class="btn btn-prev">Previous</button>
+                                    <input type="submit" value="Submit" class="btn">
+                                </div>
                             </div>
-                            <div class="btns-group">
-                                <a href="#" class="btn btn-prev">Previous</a>
-                                <input type="submit" value="Submit" class="btn">
-                            </div>
-                        </div>
                         </form>
                     </main>
-              
+             <script src="./Assets/index.js"></script>
+             
             </body>
     </html>
