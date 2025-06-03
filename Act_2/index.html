@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <meta name="theme-color" content="#020024">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+            <link rel="stylesheet" href="./Assets/style.css">
+            <script src="./Assets/index.js"></script>
+            <title>Recursos Animados</title>
+        </head>
+            <body>
+                <header>
+                    <div class="logo">
+                        <img src="./Assets/image/Logo.png" alt="logo nexus">
+                    </div>
+                </header>
+
+                    <main>
+                        <form action="#">
+                        
+                        <!-- Steps-->
+                        <div class="form form-step form-step-active">
+                            <h1>Registro</h1>
+                            <!--Progress bar-->
+                         <div class="progressbar">
+                            <div class="progress" id="progress">
+                                
+                            </div>
+                            <div class="progress-setp progress-step-active" data-title="Registro"></div>
+                            <div class="progress-setp" data-title="Info"></div>
+                            <div class="progress-setp" data-title="Pago"></div>
+                         </div>
+                            <div class="input-group">
+                                <label for="username">Nombre</label>
+                                <input type="text" name="" id="username" placeholder="Nombre">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="position">Position</label>
+                                <input type="text" name="position" id="position">
+                            </div>
+                            <div class="">
+                                <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
+                            </div>
+                        </div>
+                        <div class="form form-step">
+                            <h1>Registro1</h1>
+                            <div class="input-group">
+                                <label for="username">Telefono</label>
+                                <input type="number" name="" id="username" placeholder="Nombre">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="position">Direccion</label>
+                                <input type="text" name="position" id="position">
+                            </div>
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-prev">Previous</a>
+                                <a href="#" class="btn btn-next">Next</a>
+                            </div>
+                        </div>
+                        <div class="form form-step ">
+                            <h1>Registro2</h1>
+                            <div class="input-group">
+                                <label for="username">Comprar</label>
+                                <input type="number" name="" id="username" placeholder="Nombre">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="position">Total</label>
+                                <input type="text" name="position" id="position">
+                            </div>
+                            <div class="btns-group">
+                                <a href="#" class="btn btn-prev">Previous</a>
+                                <input type="submit" value="Submit" class="btn">
+                            </div>
+                        </div>
+                        </form>
+                    </main>
+              
+            </body>
+    </html>

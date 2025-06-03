@@ -1,0 +1,155 @@
+:root{
+    --color:linear-gradient(176deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    --primary-color: rgb(11,78,179);
+}
+
+
+html{
+    height: 1000px;
+    width: 100%;
+    background:var(--color);
+    font-family: "Roboto", sans-serif;
+}
+
+header{
+    width: 90%;
+    height: 50px;
+    padding: 5px 60px;
+}
+
+header div img{
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100vh;
+}
+
+/* Progressbar */
+.progressbar{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    counter-reset: step ;
+    margin: 2rem 0 4rem;
+}
+
+.progressbar::before, .progress{
+    content:"";
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width:75%;
+    background-color: #dcdcdc;
+   
+}
+
+.progress{
+    background-color:var(--primary-color) ;
+    width: 0%;
+}
+
+.progress-setp{
+    width: 2.1875rem;
+    height: 2.1875rem;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     z-index:1;
+}
+
+.progress-setp::before{
+   counter-increment: step;
+    content: counter(step);
+}
+
+.progress-setp::after{
+    content: attr(data-title);
+    position:absolute;
+    top: calc(100% + .75rem);
+    font-size: 0.85rem;
+    color:rgb(102, 102, 102);
+}
+
+.progress-step-active{
+    background-color: var(--primary-color);
+    color: #f3f3f3;
+}
+
+main .form{
+    width:30vw;
+    height: 50vh;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 0.35rem;
+    box-shadow: 10px 10px 5px black;
+}
+
+.form-step{
+    display:none;
+}
+
+.form-step-active{
+    display:block
+}
+
+h1{
+    text-align: center;
+}
+/* Global imputs */
+
+label{
+    display: block;
+    margin-bottom: 0.5rem;
+}
+input{
+    display:block;
+    width: 90%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+}
+
+.width-50{
+    width:50%;
+}
+
+.ml-auto{
+    margin-left:auto;
+}
+
+.input-group{
+    margin: 2rem 0;
+}
+
+/* Button */
+
+.btns-group{
+    display: grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1.5rem;
+}
+.btn{
+    padding: 0.60rem;
+    display: block;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: #f3f3f3;
+    text-align: center;
+    border-radius: 0.25rem;
+    cursor:pointer;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color)
+}
