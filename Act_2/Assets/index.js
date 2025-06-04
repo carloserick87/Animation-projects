@@ -1,61 +1,57 @@
 const nextBtns = document.querySelectorAll(".btn-next");
 const prevBtns = document.querySelectorAll(".btn-prev");
-const steps = document.querySelectorAll(".form-step");
+const steps = document.querySelectorAll(".accordion-item");
 const progress = document.getElementById("progress");
 const stepIndicators = document.querySelectorAll(".progress-setp");
 
 let currentStep = 0;
 
-nextBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const inputs = steps[currentStep].querySelectorAll("input");
-    let isValid = true;
+function updateFormSteps(step) {
+  steps.forEach((section, index) => {
+    section.classList.toggle("active", index === step);
+  });
 
-    inputs.forEach(input => {
-      if (input.value.trim() === "") {
-        input.classList.add("error");
-        isValid = false;
+  stepIndicators.forEach((indicator, index) => {
+    indicator.classList.toggle("progress-step-active", index <= step);
+  });
+
+  progress.style.width = `${(step / (stepIndicators.length - 1)) * 100}%`;
+}
+
+// NEXT button
+nextBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (currentStep === 0) {
+      const nameInput = document.getElementById("nombre");
+      if (nameInput.value.trim() === "") {
+        nameInput.classList.add("error");
+        return;
       } else {
-        input.classList.remove("error");
+        nameInput.classList.remove("error");
       }
-    });
+    }
 
-    if (!isValid) return;
-
-    currentStep++;
-    updateFormSteps();
-    updateProgressbar();
+    if (currentStep < steps.length - 1) {
+      currentStep++;
+      updateFormSteps(currentStep);
+    }
   });
 });
 
-prevBtns.forEach(btn => {
+// PREVIOUS button
+prevBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
-    currentStep--;
-    updateFormSteps();
-    updateProgressbar();
+    if (currentStep > 0) {
+      currentStep--;
+      updateFormSteps(currentStep);
+    }
   });
 });
 
+// Click en el stepper
 stepIndicators.forEach((step, index) => {
   step.addEventListener("click", () => {
     currentStep = index;
-    updateFormSteps();
-    updateProgressbar();
+    updateFormSteps(currentStep);
   });
 });
-
-function updateFormSteps() {
-  steps.forEach((step, idx) => {
-    step.classList.remove("form-step-active");
-    if (idx === currentStep) {
-      step.classList.add("form-step-active");
-    }
-  });
-}
-
-function updateProgressbar() {
-  stepIndicators.forEach((step, idx) => {
-    step.classList.toggle("progress-step-active", idx <= currentStep);
-  });
-  progress.style.width = `${(currentStep / (steps.length - 1)) * 100}%`;
-}
